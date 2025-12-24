@@ -1,4 +1,4 @@
-import { WebsiteOption, RTPStyle, BackgroundCategory } from '@/types';
+import { WebsiteOption, RTPStyle, BackgroundCategory, LayoutOption } from '@/types';
 
 export const WEBSITES: WebsiteOption[] = [
   {
@@ -280,5 +280,49 @@ export const RTP_STYLES: RTPStyle[] = [
     secondaryColor: "#bef264",
     backgroundColor: "#0a1a00",
     accentColor: "#65a30d"
+  }
+];
+
+// Layout Options - Various frame and modal styles
+export const LAYOUT_OPTIONS: LayoutOption[] = [
+  {
+    id: "classic",
+    name: "Classic",
+    description: "Simple centered layout with clean design"
+  },
+  {
+    id: "neon-glow",
+    name: "Neon Glow",
+    description: "Glowing neon borders and effects"
+  },
+  {
+    id: "cyber-frame",
+    name: "Cyber Frame",
+    description: "Tech/cyber styled frames with scan lines"
+  },
+  {
+    id: "golden-luxury",
+    name: "Golden Luxury",
+    description: "Premium gold themed with ornamental borders"
+  },
+  {
+    id: "matrix",
+    name: "Matrix",
+    description: "Digital matrix style with code rain effect"
+  },
+  {
+    id: "holographic",
+    name: "Holographic",
+    description: "Holographic/futuristic style with rainbow effects"
+  },
+  {
+    id: "glassmorphism",
+    name: "Glassmorphism",
+    description: "Modern glass effect with blur and transparency"
+  },
+  {
+    id: "retro-arcade",
+    name: "Retro Arcade",
+    description: "Pixel art inspired retro gaming style"
   }
 ];

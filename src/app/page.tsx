@@ -1,17 +1,18 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { Download, Loader2, CheckCircle, AlertCircle, Copy, Share2 } from 'lucide-react';
+import { Download, CheckCircle, AlertCircle, Copy, Share2 } from 'lucide-react';
 import Header from '@/components/Header';
 import Preview from '@/components/Preview';
-import { WEBSITES, RTP_STYLES, BACKGROUND_CATEGORIES, BACKGROUNDS } from '@/data/config';
-import { WebsiteOption, RTPStyle, TextRow } from '@/types';
+import { WEBSITES, RTP_STYLES, BACKGROUND_CATEGORIES, BACKGROUNDS, LAYOUT_OPTIONS } from '@/data/config';
+import { WebsiteOption, RTPStyle, TextRow, LayoutOption } from '@/types';
 
 export default function Home() {
   // Website & Style States
   const [selectedWebsite, setSelectedWebsite] = useState<WebsiteOption>(WEBSITES[0]);
   const [selectedStyle, setSelectedStyle] = useState<RTPStyle>(RTP_STYLES[0]);
   const [selectedBackground, setSelectedBackground] = useState<string>(BACKGROUND_CATEGORIES[0].backgrounds[0]);
+  const [selectedLayout, setSelectedLayout] = useState<LayoutOption>(LAYOUT_OPTIONS[0]);
 
   // Content States
   const [headerTitle, setHeaderTitle] = useState<string>('LINK ALTERNATIF');
@@ -87,11 +88,16 @@ export default function Home() {
     setSelectedStyle(randomStyle);
   }, []);
 
+  const shuffleLayout = useCallback(() => {
+    const randomLayout = LAYOUT_OPTIONS[Math.floor(Math.random() * LAYOUT_OPTIONS.length)];
+    setSelectedLayout(randomLayout);
+  }, []);
+
   // Reset cached image when settings change
   useEffect(() => {
     setCachedImage(null);
     setDownloadStatus('idle');
-  }, [selectedWebsite, selectedStyle, selectedBackground, headerTitle, text1, text2, additionalTexts, telegramFooter]);
+  }, [selectedWebsite, selectedStyle, selectedBackground, selectedLayout, headerTitle, text1, text2, additionalTexts, telegramFooter]);
 
   // Convert image URL to base64 via proxy
   const imageToBase64 = async (url: string): Promise<string> => {
@@ -175,7 +181,9 @@ export default function Home() {
 
       const dataUrl = await toPng(element, {
         cacheBust: true,
-        pixelRatio: window.devicePixelRatio || 2,
+        pixelRatio: 1, // Use 1 for exact 1000x1000
+        width: 1000,
+        height: 1000,
         backgroundColor: selectedStyle.backgroundColor || '#000000',
         filter: (node) => {
           if (node instanceof HTMLElement) {
@@ -218,7 +226,7 @@ export default function Home() {
   const downloadImage = () => {
     if (!cachedImage) return;
     const link = document.createElement('a');
-    link.download = `LinkAlternatif-${selectedWebsite.name}-${new Date().toISOString().split('T')[0]}.png`;
+    link.download = `LinkAlternatif-${selectedWebsite.name}-${selectedLayout.id}-${new Date().toISOString().split('T')[0]}.png`;
     link.href = cachedImage;
     link.click();
     showNotification('success', 'Gambar berhasil didownload!');
@@ -265,7 +273,7 @@ export default function Home() {
       const blob = await response.blob();
       const file = new File(
         [blob],
-        `LinkAlternatif-${selectedWebsite.name}-${new Date().toISOString().split('T')[0]}.png`,
+        `LinkAlternatif-${selectedWebsite.name}-${selectedLayout.id}-${new Date().toISOString().split('T')[0]}.png`,
         { type: 'image/png' }
       );
 
@@ -319,6 +327,9 @@ export default function Home() {
           selectedStyle={selectedStyle}
           onStyleChange={setSelectedStyle}
           styles={RTP_STYLES}
+          selectedLayout={selectedLayout}
+          onLayoutChange={setSelectedLayout}
+          layouts={LAYOUT_OPTIONS}
           headerTitle={headerTitle}
           onHeaderTitleChange={setHeaderTitle}
           text1={text1}
@@ -333,47 +344,25 @@ export default function Home() {
           onTelegramFooterChange={setTelegramFooter}
           onShuffleBackground={shuffleBackground}
           onShuffleStyle={shuffleStyle}
+          onShuffleLayout={shuffleLayout}
         />
 
         {/* Main Content */}
         <div className="bg-gray-900 rounded-lg p-6 shadow-xl">
-          <div className="mb-8">
+          <div className="mb-6">
             <h1 className="text-3xl font-bold text-blue-400">
               Link Alternative Generator
             </h1>
             <p className="text-gray-400 text-sm mt-1">
-              Generate gambar Link Alternatif untuk website Anda
+              Generate gambar Link Alternatif 1000x1000px dengan berbagai layout keren
             </p>
-          </div>
-
-          {/* Browser Compatibility Status */}
-          <div className="mb-4 p-4 bg-gray-800 rounded-lg border border-gray-700">
-            <h3 className="text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2">
-              <AlertCircle className="w-4 h-4" />
-              Status Kompatibilitas Browser
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-              <div className="flex items-center gap-2">
-                <div className={`w-2 h-2 rounded-full ${browserCapabilities.html2canvas ? 'bg-green-500' : 'bg-red-500'}`} />
-                <span className="text-gray-300">Screenshot: </span>
-                <span className={browserCapabilities.html2canvas ? 'text-green-400' : 'text-red-400'}>
-                  {browserCapabilities.html2canvas ? 'Supported' : 'Not Supported'}
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className={`w-2 h-2 rounded-full ${browserCapabilities.clipboard ? 'bg-green-500' : 'bg-yellow-500'}`} />
-                <span className="text-gray-300">Copy to Clipboard: </span>
-                <span className={browserCapabilities.clipboard ? 'text-green-400' : 'text-yellow-400'}>
-                  {browserCapabilities.clipboard ? 'Supported' : 'Not Supported'}
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className={`w-2 h-2 rounded-full ${browserCapabilities.webShare ? 'bg-green-500' : 'bg-yellow-500'}`} />
-                <span className="text-gray-300">Web Share API: </span>
-                <span className={browserCapabilities.webShare ? 'text-green-400' : 'text-yellow-400'}>
-                  {browserCapabilities.webShare ? 'Supported' : 'Not Supported'}
-                </span>
-              </div>
+            <div className="mt-2 flex items-center gap-2">
+              <span className="px-3 py-1 bg-purple-600/20 text-purple-400 rounded-full text-sm font-medium">
+                Layout: {selectedLayout.name}
+              </span>
+              <span className="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm font-medium">
+                Style: {selectedStyle.name}
+              </span>
             </div>
           </div>
 
@@ -390,7 +379,7 @@ export default function Home() {
                 }`}
               >
                 <Download className="w-5 h-5" />
-                Download PNG
+                Download PNG (1000x1000)
               </button>
 
               <button
@@ -425,7 +414,7 @@ export default function Home() {
               {downloadStatus === 'ready' && (
                 <div className="text-green-400 text-sm flex items-center gap-2">
                   <CheckCircle className="w-4 h-4" />
-                  Gambar siap didownload, dicopy, atau dishare
+                  Gambar 1000x1000px siap didownload, dicopy, atau dishare
                 </div>
               )}
 
@@ -441,7 +430,7 @@ export default function Home() {
           {cachedImage && (
             <div className="mb-6 p-6 bg-gray-800 rounded-lg border-2 border-green-500">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-bold text-green-400">Screenshot Berhasil!</h3>
+                <h3 className="text-2xl font-bold text-green-400">Screenshot Berhasil! (1000x1000px)</h3>
                 <div className="flex gap-3">
                   <button
                     onClick={downloadImage}
@@ -452,32 +441,56 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              <div className="overflow-auto rounded-lg border-2 border-gray-700 bg-black">
+              <div className="overflow-auto rounded-lg border-2 border-gray-700 bg-black max-h-[600px]">
                 <img src={cachedImage} alt="Screenshot Result" className="w-full" />
               </div>
             </div>
           )}
 
           {/* Preview */}
-          <div className="overflow-x-auto">
-            <Preview
-              ref={previewRef}
-              selectedWebsite={selectedWebsite}
-              selectedStyle={selectedStyle}
-              selectedBackground={selectedBackground}
-              headerTitle={headerTitle}
-              text1={text1}
-              text2={text2}
-              additionalTexts={additionalTexts}
-              telegramFooter={telegramFooter}
-              onPrepareImage={prepareImage}
-              onDownload={downloadImage}
-              onCopy={copyToClipboard}
-              onShare={shareImage}
-              browserCapabilities={browserCapabilities}
-              isImageReady={!!cachedImage}
-              isProcessing={isProcessing}
-            />
+          <div className="overflow-x-auto pb-4">
+            <div className="inline-block">
+              <Preview
+                ref={previewRef}
+                selectedWebsite={selectedWebsite}
+                selectedStyle={selectedStyle}
+                selectedBackground={selectedBackground}
+                selectedLayout={selectedLayout}
+                headerTitle={headerTitle}
+                text1={text1}
+                text2={text2}
+                additionalTexts={additionalTexts}
+                telegramFooter={telegramFooter}
+                onPrepareImage={prepareImage}
+                onDownload={downloadImage}
+                onCopy={copyToClipboard}
+                onShare={shareImage}
+                browserCapabilities={browserCapabilities}
+                isImageReady={!!cachedImage}
+                isProcessing={isProcessing}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Layout Info */}
+        <div className="bg-gray-800 rounded-lg p-6 shadow-xl">
+          <h2 className="text-xl font-bold mb-4 text-purple-400">Layout Tersedia:</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {LAYOUT_OPTIONS.map((layout) => (
+              <div
+                key={layout.id}
+                className={`p-3 rounded-lg cursor-pointer transition-all ${
+                  selectedLayout.id === layout.id
+                    ? 'bg-purple-600/30 border-2 border-purple-500'
+                    : 'bg-gray-700/50 border-2 border-transparent hover:border-gray-600'
+                }`}
+                onClick={() => setSelectedLayout(layout)}
+              >
+                <div className="font-semibold text-white">{layout.name}</div>
+                <div className="text-xs text-gray-400">{layout.description}</div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -486,13 +499,13 @@ export default function Home() {
           <h2 className="text-xl font-bold mb-4 text-yellow-400">Cara Penggunaan:</h2>
           <ol className="list-decimal list-inside space-y-2 text-gray-300">
             <li>Pilih website dari dropdown</li>
-            <li>Atur style warna dan background sesuai keinginan</li>
-            <li>Isi Header/Judul (misal: LINK ALTERNATIF)</li>
-            <li>Isi Text 1 dan Text 2 dengan link alternatif</li>
+            <li>Pilih <strong className="text-purple-400">Layout Frame</strong> sesuai keinginan (8 pilihan)</li>
+            <li>Atur style warna dan background</li>
+            <li>Isi Header/Judul dan Text link alternatif</li>
             <li>Tambahkan text tambahan jika diperlukan</li>
-            <li>Isi Footer Telegram dengan username Telegram</li>
+            <li>Isi Footer Telegram</li>
             <li>Klik tombol <strong className="text-cyan-400">&quot;Screenshot&quot;</strong> di pojok kanan bawah preview</li>
-            <li>Download, Copy, atau Share gambar hasil screenshot</li>
+            <li>Download gambar 1000x1000px</li>
           </ol>
         </div>
       </div>

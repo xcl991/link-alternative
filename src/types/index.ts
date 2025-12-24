@@ -25,6 +25,12 @@ export interface TextRow {
   text: string;
 }
 
+export interface LayoutOption {
+  id: string;
+  name: string;
+  description: string;
+}
+
 export interface LinkAlternativeConfig {
   websiteId: string;
   headerTitle: string;
@@ -34,4 +40,5 @@ export interface LinkAlternativeConfig {
   telegramFooter: string;
   backgroundId: string;
   styleId: string;
+  layoutId: string;
 }

@@ -258,7 +258,7 @@ const ClassicLayout = ({ website, style, headerTitle, texts, telegram }: LayoutP
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-8 py-4 rounded-xl text-center font-bold text-4xl"
+            className="px-8 py-4 rounded-xl text-center font-bold text-5xl"
             style={{
               background: `linear-gradient(135deg, ${style.accentColor}CC 0%, ${style.accentColor}99 100%)`,
               border: `3px solid ${style.primaryColor}60`,
@@ -275,9 +275,9 @@ const ClassicLayout = ({ website, style, headerTitle, texts, telegram }: LayoutP
       {/* Telegram */}
       {telegram && (
         <div className="mt-10 flex items-center gap-3">
-          <TelegramIcon color={style.primaryColor} size={38} />
+          <TelegramIcon color={style.primaryColor} size={48} />
           <span
-            className="text-4xl font-semibold"
+            className="text-5xl font-semibold"
             style={{ color: style.primaryColor, textShadow: `0 0 15px ${style.primaryColor}60` }}
           >
             {telegram}
@@ -352,7 +352,7 @@ const NeonGlowLayout = ({ website, style, headerTitle, texts, telegram }: Layout
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-6 py-4 rounded-lg text-center font-bold text-3xl"
+            className="px-6 py-4 rounded-lg text-center font-bold text-6xl"
             style={{
               background: 'rgba(0,0,0,0.6)',
               border: `2px solid ${style.primaryColor}`,
@@ -368,9 +368,9 @@ const NeonGlowLayout = ({ website, style, headerTitle, texts, telegram }: Layout
 
       {telegram && (
         <div className="mt-10 flex items-center gap-3">
-          <TelegramIcon color={style.primaryColor} size={34} />
+          <TelegramIcon color={style.primaryColor} size={48} />
           <span
-            className="text-3xl font-bold"
+            className="text-6xl font-bold"
             style={{ color: style.primaryColor, textShadow: `0 0 20px ${style.primaryColor}` }}
           >
             {telegram}
@@ -456,7 +456,7 @@ const CyberFrameLayout = ({ website, style, headerTitle, texts, telegram }: Layo
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="relative px-6 py-4 text-center font-mono font-bold text-3xl"
+            className="relative px-6 py-4 text-center font-mono font-bold text-5xl"
             style={{ color: style.secondaryColor }}
           >
             <div
@@ -473,8 +473,8 @@ const CyberFrameLayout = ({ website, style, headerTitle, texts, telegram }: Layo
 
       {telegram && (
         <div className="mt-10 flex items-center gap-3 px-6 py-2" style={{ background: `${style.accentColor}40` }}>
-          <TelegramIcon color={style.primaryColor} size={34} />
-          <span className="text-3xl font-mono" style={{ color: style.primaryColor }}>
+          <TelegramIcon color={style.primaryColor} size={48} />
+          <span className="text-5xl font-mono" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -555,7 +555,7 @@ const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: La
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-8 py-4 rounded-lg text-center font-semibold text-3xl"
+            className="px-8 py-4 rounded-lg text-center font-semibold text-5xl"
             style={{
               background: `linear-gradient(135deg, ${style.backgroundColor}F0, ${style.accentColor}90)`,
               border: `2px solid ${style.primaryColor}`,
@@ -570,8 +570,8 @@ const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: La
 
       {telegram && (
         <div className="mt-10 flex items-center gap-3">
-          <TelegramIcon color={style.primaryColor} size={34} />
-          <span className="text-3xl font-semibold" style={{ color: style.primaryColor }}>
+          <TelegramIcon color={style.primaryColor} size={48} />
+          <span className="text-5xl font-semibold" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -634,7 +634,7 @@ const MatrixLayout = ({ website, style, headerTitle, texts, telegram }: LayoutPr
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-6 py-3 text-center text-3xl"
+            className="px-6 py-3 text-center text-5xl"
             style={{
               background: `${style.primaryColor}10`,
               border: `1px solid ${style.primaryColor}60`,
@@ -652,8 +652,8 @@ const MatrixLayout = ({ website, style, headerTitle, texts, telegram }: LayoutPr
           className="mt-10 flex items-center gap-3 px-4 py-2"
           style={{ border: `1px solid ${style.primaryColor}40` }}
         >
-          <TelegramIcon color={style.primaryColor} size={30} />
-          <span className="font-mono text-2xl" style={{ color: style.primaryColor }}>
+          <TelegramIcon color={style.primaryColor} size={48} />
+          <span className="font-mono text-5xl" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -725,7 +725,7 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-8 py-4 rounded-xl text-center font-bold text-3xl"
+            className="px-8 py-4 rounded-xl text-center font-bold text-6xl"
             style={{
               background: `linear-gradient(135deg, ${style.primaryColor}25, ${style.accentColor}15)`,
               border: `1px solid ${style.primaryColor}50`,
@@ -741,8 +741,8 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
 
       {telegram && (
         <div className="mt-10 flex items-center gap-3">
-          <TelegramIcon color={style.primaryColor} size={34} />
-          <span className="text-3xl font-semibold" style={{ color: style.primaryColor }}>
+          <TelegramIcon color={style.primaryColor} size={48} />
+          <span className="text-6xl font-semibold" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -800,7 +800,7 @@ const GlassmorphismLayout = ({ website, style, headerTitle, texts, telegram }: L
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-6 py-4 rounded-2xl text-center font-semibold text-3xl"
+            className="px-6 py-4 rounded-2xl text-center font-semibold text-5xl"
             style={{
               background: `${style.primaryColor}15`,
               backdropFilter: 'blur(10px)',
@@ -821,8 +821,8 @@ const GlassmorphismLayout = ({ website, style, headerTitle, texts, telegram }: L
             border: `1px solid ${style.primaryColor}30`,
           }}
         >
-          <TelegramIcon color={style.primaryColor} size={30} />
-          <span className="font-medium text-2xl" style={{ color: style.primaryColor }}>
+          <TelegramIcon color={style.primaryColor} size={48} />
+          <span className="font-medium text-5xl" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -918,7 +918,7 @@ const RetroArcadeLayout = ({ website, style, headerTitle, texts, telegram }: Lay
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-6 py-3 text-center font-bold text-2xl uppercase tracking-wider"
+            className="px-6 py-3 text-center font-bold text-5xl uppercase tracking-wider"
             style={{
               background: style.accentColor,
               border: `4px solid ${style.primaryColor}`,
@@ -934,9 +934,9 @@ const RetroArcadeLayout = ({ website, style, headerTitle, texts, telegram }: Lay
 
       {telegram && (
         <div className="mt-8 flex items-center gap-3">
-          <TelegramIcon color={style.primaryColor} size={30} />
+          <TelegramIcon color={style.primaryColor} size={48} />
           <span
-            className="text-2xl uppercase tracking-wider"
+            className="text-5xl uppercase tracking-wider"
             style={{ color: style.primaryColor, fontFamily: 'monospace' }}
           >
             {telegram}

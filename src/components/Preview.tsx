@@ -243,7 +243,7 @@ const ClassicLayout = ({ website, style, headerTitle, texts, telegram }: LayoutP
       {/* Header Title */}
       {headerTitle && (
         <h1
-          className="text-4xl font-bold text-center mb-10 tracking-widest"
+          className="text-5xl font-bold text-center mb-10 tracking-widest"
           style={{
             color: style.primaryColor,
             textShadow: `0 0 30px ${style.primaryColor}80`,
@@ -258,7 +258,7 @@ const ClassicLayout = ({ website, style, headerTitle, texts, telegram }: LayoutP
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-8 py-4 rounded-xl text-center font-bold text-2xl"
+            className="px-8 py-4 rounded-xl text-center font-bold text-4xl"
             style={{
               background: `linear-gradient(135deg, ${style.accentColor}CC 0%, ${style.accentColor}99 100%)`,
               border: `3px solid ${style.primaryColor}60`,
@@ -275,9 +275,9 @@ const ClassicLayout = ({ website, style, headerTitle, texts, telegram }: LayoutP
       {/* Telegram */}
       {telegram && (
         <div className="mt-10 flex items-center gap-3">
-          <TelegramIcon color={style.primaryColor} size={32} />
+          <TelegramIcon color={style.primaryColor} size={38} />
           <span
-            className="text-2xl font-semibold"
+            className="text-4xl font-semibold"
             style={{ color: style.primaryColor, textShadow: `0 0 15px ${style.primaryColor}60` }}
           >
             {telegram}
@@ -334,7 +334,7 @@ const NeonGlowLayout = ({ website, style, headerTitle, texts, telegram }: Layout
 
       {headerTitle && (
         <h1
-          className="text-5xl font-black text-center mb-10 tracking-wider"
+          className="text-6xl font-black text-center mb-10 tracking-wider"
           style={{
             color: style.primaryColor,
             textShadow: `
@@ -352,7 +352,7 @@ const NeonGlowLayout = ({ website, style, headerTitle, texts, telegram }: Layout
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-6 py-4 rounded-lg text-center font-bold text-xl"
+            className="px-6 py-4 rounded-lg text-center font-bold text-3xl"
             style={{
               background: 'rgba(0,0,0,0.6)',
               border: `2px solid ${style.primaryColor}`,
@@ -368,9 +368,9 @@ const NeonGlowLayout = ({ website, style, headerTitle, texts, telegram }: Layout
 
       {telegram && (
         <div className="mt-10 flex items-center gap-3">
-          <TelegramIcon color={style.primaryColor} size={28} />
+          <TelegramIcon color={style.primaryColor} size={34} />
           <span
-            className="text-xl font-bold"
+            className="text-3xl font-bold"
             style={{ color: style.primaryColor, textShadow: `0 0 20px ${style.primaryColor}` }}
           >
             {telegram}
@@ -440,7 +440,7 @@ const CyberFrameLayout = ({ website, style, headerTitle, texts, telegram }: Layo
       {headerTitle && (
         <div className="relative mb-8">
           <h1
-            className="text-4xl font-black text-center tracking-[0.3em] uppercase"
+            className="text-5xl font-black text-center tracking-[0.3em] uppercase"
             style={{ color: style.primaryColor }}
           >
             {headerTitle}
@@ -456,7 +456,7 @@ const CyberFrameLayout = ({ website, style, headerTitle, texts, telegram }: Layo
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="relative px-6 py-4 text-center font-mono font-bold text-xl"
+            className="relative px-6 py-4 text-center font-mono font-bold text-3xl"
             style={{ color: style.secondaryColor }}
           >
             <div
@@ -473,8 +473,8 @@ const CyberFrameLayout = ({ website, style, headerTitle, texts, telegram }: Layo
 
       {telegram && (
         <div className="mt-10 flex items-center gap-3 px-6 py-2" style={{ background: `${style.accentColor}40` }}>
-          <TelegramIcon color={style.primaryColor} size={28} />
-          <span className="text-xl font-mono" style={{ color: style.primaryColor }}>
+          <TelegramIcon color={style.primaryColor} size={34} />
+          <span className="text-3xl font-mono" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -533,7 +533,7 @@ const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: La
       {headerTitle && (
         <div className="relative mb-8">
           <h1
-            className="text-4xl font-serif font-bold text-center tracking-widest"
+            className="text-5xl font-serif font-bold text-center tracking-widest"
             style={{
               background: `linear-gradient(180deg, ${style.secondaryColor}, ${style.primaryColor}, ${style.accentColor})`,
               WebkitBackgroundClip: 'text',
@@ -555,7 +555,7 @@ const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: La
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-8 py-4 rounded-lg text-center font-semibold text-xl"
+            className="px-8 py-4 rounded-lg text-center font-semibold text-3xl"
             style={{
               background: `linear-gradient(135deg, ${style.backgroundColor}F0, ${style.accentColor}90)`,
               border: `2px solid ${style.primaryColor}`,
@@ -570,8 +570,8 @@ const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: La
 
       {telegram && (
         <div className="mt-10 flex items-center gap-3">
-          <TelegramIcon color={style.primaryColor} size={28} />
-          <span className="text-xl font-semibold" style={{ color: style.primaryColor }}>
+          <TelegramIcon color={style.primaryColor} size={34} />
+          <span className="text-3xl font-semibold" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -620,7 +620,7 @@ const MatrixLayout = ({ website, style, headerTitle, texts, telegram }: LayoutPr
 
       {headerTitle && (
         <h1
-          className="text-4xl font-mono font-bold text-center mb-10 tracking-widest"
+          className="text-5xl font-mono font-bold text-center mb-10 tracking-widest"
           style={{
             color: style.primaryColor,
             textShadow: `0 0 10px ${style.primaryColor}, 0 0 20px ${style.primaryColor}80`,
@@ -634,7 +634,7 @@ const MatrixLayout = ({ website, style, headerTitle, texts, telegram }: LayoutPr
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-6 py-3 text-center text-xl"
+            className="px-6 py-3 text-center text-3xl"
             style={{
               background: `${style.primaryColor}10`,
               border: `1px solid ${style.primaryColor}60`,
@@ -652,8 +652,8 @@ const MatrixLayout = ({ website, style, headerTitle, texts, telegram }: LayoutPr
           className="mt-10 flex items-center gap-3 px-4 py-2"
           style={{ border: `1px solid ${style.primaryColor}40` }}
         >
-          <TelegramIcon color={style.primaryColor} size={24} />
-          <span className="font-mono" style={{ color: style.primaryColor }}>
+          <TelegramIcon color={style.primaryColor} size={30} />
+          <span className="font-mono text-2xl" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -709,7 +709,7 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
 
       {headerTitle && (
         <h1
-          className="text-5xl font-bold text-center mb-10 tracking-wider"
+          className="text-6xl font-bold text-center mb-10 tracking-wider"
           style={{
             background: `linear-gradient(90deg, ${style.primaryColor}, ${style.secondaryColor}, ${style.primaryColor})`,
             WebkitBackgroundClip: 'text',
@@ -725,7 +725,7 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-8 py-4 rounded-xl text-center font-bold text-xl"
+            className="px-8 py-4 rounded-xl text-center font-bold text-3xl"
             style={{
               background: `linear-gradient(135deg, ${style.primaryColor}25, ${style.accentColor}15)`,
               border: `1px solid ${style.primaryColor}50`,
@@ -741,8 +741,8 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
 
       {telegram && (
         <div className="mt-10 flex items-center gap-3">
-          <TelegramIcon color={style.primaryColor} size={28} />
-          <span className="text-xl font-semibold" style={{ color: style.primaryColor }}>
+          <TelegramIcon color={style.primaryColor} size={34} />
+          <span className="text-3xl font-semibold" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -786,7 +786,7 @@ const GlassmorphismLayout = ({ website, style, headerTitle, texts, telegram }: L
 
       {headerTitle && (
         <h1
-          className="text-4xl font-bold text-center mb-10 tracking-wide"
+          className="text-5xl font-bold text-center mb-10 tracking-wide"
           style={{
             color: style.primaryColor,
             textShadow: `0 2px 10px ${style.primaryColor}50`,
@@ -800,7 +800,7 @@ const GlassmorphismLayout = ({ website, style, headerTitle, texts, telegram }: L
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-6 py-4 rounded-2xl text-center font-semibold text-xl"
+            className="px-6 py-4 rounded-2xl text-center font-semibold text-3xl"
             style={{
               background: `${style.primaryColor}15`,
               backdropFilter: 'blur(10px)',
@@ -821,8 +821,8 @@ const GlassmorphismLayout = ({ website, style, headerTitle, texts, telegram }: L
             border: `1px solid ${style.primaryColor}30`,
           }}
         >
-          <TelegramIcon color={style.primaryColor} size={24} />
-          <span className="font-medium" style={{ color: style.primaryColor }}>
+          <TelegramIcon color={style.primaryColor} size={30} />
+          <span className="font-medium text-2xl" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -900,7 +900,7 @@ const RetroArcadeLayout = ({ website, style, headerTitle, texts, telegram }: Lay
 
       {headerTitle && (
         <h1
-          className="text-4xl font-bold text-center mb-8 tracking-widest uppercase"
+          className="text-5xl font-bold text-center mb-8 tracking-widest uppercase"
           style={{
             color: style.primaryColor,
             textShadow: `
@@ -918,7 +918,7 @@ const RetroArcadeLayout = ({ website, style, headerTitle, texts, telegram }: Lay
         {texts.map((text, idx) => (
           <div
             key={idx}
-            className="px-6 py-3 text-center font-bold text-lg uppercase tracking-wider"
+            className="px-6 py-3 text-center font-bold text-2xl uppercase tracking-wider"
             style={{
               background: style.accentColor,
               border: `4px solid ${style.primaryColor}`,
@@ -934,9 +934,9 @@ const RetroArcadeLayout = ({ website, style, headerTitle, texts, telegram }: Lay
 
       {telegram && (
         <div className="mt-8 flex items-center gap-3">
-          <TelegramIcon color={style.primaryColor} size={24} />
+          <TelegramIcon color={style.primaryColor} size={30} />
           <span
-            className="text-lg uppercase tracking-wider"
+            className="text-2xl uppercase tracking-wider"
             style={{ color: style.primaryColor, fontFamily: 'monospace' }}
           >
             {telegram}
@@ -946,7 +946,7 @@ const RetroArcadeLayout = ({ website, style, headerTitle, texts, telegram }: Lay
 
       {/* Insert coin text */}
       <div
-        className="mt-6 text-sm tracking-widest animate-pulse"
+        className="mt-6 text-lg tracking-widest animate-pulse"
         style={{ color: style.secondaryColor, fontFamily: 'monospace' }}
       >
         INSERT COIN TO CONTINUE

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, Shuffle, Plus, Trash2, Layout } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -82,6 +82,13 @@ export default function Header({
   const [isLayoutOpen, setIsLayoutOpen] = useState(false);
   const [isBgCategoryOpen, setIsBgCategoryOpen] = useState(false);
   const [selectedBgCategory, setSelectedBgCategory] = useState<BackgroundCategory>(backgroundCategories[0]);
+
+  // Reset to first category when background categories change (e.g., when website changes)
+  useEffect(() => {
+    if (backgroundCategories.length > 0) {
+      setSelectedBgCategory(backgroundCategories[0]);
+    }
+  }, [backgroundCategories]);
 
   return (
     <div className="bg-gray-900 rounded-lg p-4 shadow-xl space-y-4">

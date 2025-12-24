@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { Download, CheckCircle, AlertCircle, Copy, Share2 } from 'lucide-react';
 import Header from '@/components/Header';
 import Preview from '@/components/Preview';
 import { WEBSITES, RTP_STYLES, BACKGROUND_CATEGORIES, BACKGROUNDS, LAYOUT_OPTIONS } from '@/data/config';
-import { WebsiteOption, RTPStyle, TextRow, LayoutOption } from '@/types';
+import { WebsiteOption, RTPStyle, TextRow, LayoutOption, BackgroundCategory } from '@/types';
 
 export default function Home() {
   // Website & Style States
@@ -20,6 +20,32 @@ export default function Home() {
   const [text2, setText2] = useState<string>('www.galaxy77bet.net');
   const [additionalTexts, setAdditionalTexts] = useState<TextRow[]>([]);
   const [telegramFooter, setTelegramFooter] = useState<string>('@galaxy77bet');
+
+  // Dynamic background categories - includes website exclusive backgrounds
+  const dynamicBackgroundCategories = useMemo<BackgroundCategory[]>(() => {
+    const categories: BackgroundCategory[] = [];
+
+    // Add website exclusive backgrounds as first category if available
+    if (selectedWebsite.backgrounds && selectedWebsite.backgrounds.length > 0) {
+      categories.push({
+        id: `exclusive-${selectedWebsite.id}`,
+        name: `${selectedWebsite.name} Exclusive`,
+        backgrounds: selectedWebsite.backgrounds
+      });
+    }
+
+    // Add all standard categories
+    categories.push(...BACKGROUND_CATEGORIES);
+
+    return categories;
+  }, [selectedWebsite]);
+
+  // Auto-select exclusive background when website changes
+  useEffect(() => {
+    if (selectedWebsite.backgrounds && selectedWebsite.backgrounds.length > 0) {
+      setSelectedBackground(selectedWebsite.backgrounds[0]);
+    }
+  }, [selectedWebsite]);
 
   // Download states
   const previewRef = useRef<HTMLDivElement>(null);
@@ -78,10 +104,12 @@ export default function Home() {
 
   // Shuffle functions
   const shuffleBackground = useCallback(() => {
-    const allBackgrounds = BACKGROUNDS;
+    // Include website exclusive backgrounds if available
+    const websiteBackgrounds = selectedWebsite.backgrounds || [];
+    const allBackgrounds = [...websiteBackgrounds, ...BACKGROUNDS];
     const randomBg = allBackgrounds[Math.floor(Math.random() * allBackgrounds.length)];
     setSelectedBackground(randomBg);
-  }, []);
+  }, [selectedWebsite]);
 
   const shuffleStyle = useCallback(() => {
     const randomStyle = RTP_STYLES[Math.floor(Math.random() * RTP_STYLES.length)];
@@ -323,7 +351,7 @@ export default function Home() {
           websites={WEBSITES}
           selectedBackground={selectedBackground}
           onBackgroundChange={setSelectedBackground}
-          backgroundCategories={BACKGROUND_CATEGORIES}
+          backgroundCategories={dynamicBackgroundCategories}
           selectedStyle={selectedStyle}
           onStyleChange={setSelectedStyle}
           styles={RTP_STYLES}

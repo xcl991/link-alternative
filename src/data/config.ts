@@ -4,27 +4,48 @@ export const WEBSITES: WebsiteOption[] = [
   {
     id: "galaxy77bet",
     name: "GALAXY77BET",
-    logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6dGGITtEJUQlpAVrZjw_qoubWVYUUE3A8j_jEKeFU6kTBOZdkrm4RmTr-8m_Hu5mqxSv_ntcIWQfPRdYji-fLp2IZu5nXOMd7YNXaYou-k4z9Fj3MWeJ3brj4s3B1TYlZM-4QMDoiU24CJoQiOC_dlfgd1tdpDdJL-VhziXfvzEfg8F7Kg6R7znUheugw/w556-h104/GALAXY77BET%20FIX.png"
+    logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6dGGITtEJUQlpAVrZjw_qoubWVYUUE3A8j_jEKeFU6kTBOZdkrm4RmTr-8m_Hu5mqxSv_ntcIWQfPRdYji-fLp2IZu5nXOMd7YNXaYou-k4z9Fj3MWeJ3brj4s3B1TYlZM-4QMDoiU24CJoQiOC_dlfgd1tdpDdJL-VhziXfvzEfg8F7Kg6R7znUheugw/w556-h104/GALAXY77BET%20FIX.png",
+    backgrounds: [
+      "https://ik.imagekit.io/xcl991/gx1.png",
+      "https://ik.imagekit.io/xcl991/gx2.png"
+    ]
   },
   {
     id: "agen77bet",
     name: "AGEN77BET",
-    logo: "https://www.agen77betlunjp.com/_next/image?url=https%3A%2F%2F9996777888.com%2FV1114%2Fimages%2Flogo_icon%2Fweb_logo%2Flight_1727103660.01726_AGEN77BET%2520(1).png%3Fv%3D3&w=1080&q=75"
+    logo: "https://www.agen77betlunjp.com/_next/image?url=https%3A%2F%2F9996777888.com%2FV1114%2Fimages%2Flogo_icon%2Fweb_logo%2Flight_1727103660.01726_AGEN77BET%2520(1).png%3Fv%3D3&w=1080&q=75",
+    backgrounds: [
+      "https://ik.imagekit.io/xcl991/agen1.png",
+      "https://ik.imagekit.io/xcl991/agen2.jpg"
+    ]
   },
   {
     id: "asiaplay17",
     name: "ASIAPLAY17",
-    logo: "https://www.asiaplay17silat.com/_next/image?url=https%3A%2F%2F9996777888.com%2FV1023%2Fimages%2Flogo_icon%2Fweb_logo%2Flight_1658910649.48611_VICTORY%2520LOGO.png%3Fv%3D2&w=1080&q=75"
+    logo: "https://www.asiaplay17silat.com/_next/image?url=https%3A%2F%2F9996777888.com%2FV1023%2Fimages%2Flogo_icon%2Fweb_logo%2Flight_1658910649.48611_VICTORY%2520LOGO.png%3Fv%3D2&w=1080&q=75",
+    backgrounds: [
+      "https://ik.imagekit.io/xcl991/ap1.png",
+      "https://ik.imagekit.io/xcl991/ap2.png"
+    ]
   },
   {
     id: "darumaplay77",
     name: "DARUMAPLAY77",
-    logo: "https://darumaplay77lock.com/images/logoweb.png"
+    logo: "https://darumaplay77lock.com/images/logoweb.png",
+    backgrounds: [
+      "https://ik.imagekit.io/xcl991/daruma1.png",
+      "https://ik.imagekit.io/xcl991/daruma2.png",
+      "https://ik.imagekit.io/xcl991/daruma3.png"
+    ]
   },
   {
     id: "marvel77",
     name: "MARVEL77",
-    logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsyaAlqKvXk02lrruNmvJ56_EorNKUWNCcTKuVvz3h7Z1yHDpV4u73oX_kY10ZJJ29vTTrczE0DwgSiU0LxbB7-JWzAOp9wBc2Vy9cKsAIkZTaWfpcpF1dleivmh8HHCO79GklLtT2h-0MdC4huKyHfqpsbNR4z6UaQww0MWRFhThRsfczBxmUo2cpAg-N/w537-h100/MARVEL77%20FIX.png"
+    logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsyaAlqKvXk02lrruNmvJ56_EorNKUWNCcTKuVvz3h7Z1yHDpV4u73oX_kY10ZJJ29vTTrczE0DwgSiU0LxbB7-JWzAOp9wBc2Vy9cKsAIkZTaWfpcpF1dleivmh8HHCO79GklLtT2h-0MdC4huKyHfqpsbNR4z6UaQww0MWRFhThRsfczBxmUo2cpAg-N/w537-h100/MARVEL77%20FIX.png",
+    backgrounds: [
+      "https://ik.imagekit.io/xcl991/mv1.jpg",
+      "https://ik.imagekit.io/xcl991/mv2.png"
+    ]
   },
   {
     id: "pegasusplay77",

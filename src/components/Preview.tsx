@@ -487,22 +487,22 @@ const CyberFrameLayout = ({ website, style, headerTitle, texts, telegram }: Layo
 const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: LayoutProps) => (
   <div className="absolute inset-0 flex flex-col items-center justify-center p-12">
     {/* Dark overlay */}
-    <div className="absolute inset-0 bg-black/60" />
+    <div className="absolute inset-0" style={{ background: `${style.backgroundColor}CC` }} />
 
     {/* Ornamental Frame */}
     <div
       className="absolute inset-10 rounded-lg"
       style={{
-        border: `6px solid #D4AF37`,
+        border: `6px solid ${style.primaryColor}`,
         boxShadow: `
-          inset 0 0 30px rgba(212,175,55,0.2),
-          0 0 30px rgba(212,175,55,0.3)
+          inset 0 0 30px ${style.primaryColor}40,
+          0 0 30px ${style.primaryColor}50
         `,
       }}
     />
     <div
       className="absolute inset-12 rounded-lg"
-      style={{ border: `2px solid #D4AF3780` }}
+      style={{ border: `2px solid ${style.primaryColor}80` }}
     />
 
     {/* Corner Ornaments */}
@@ -514,8 +514,8 @@ const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: La
         <div
           className="w-12 h-12 rotate-45"
           style={{
-            border: '3px solid #D4AF37',
-            background: 'linear-gradient(135deg, #D4AF3740, transparent)',
+            border: `3px solid ${style.primaryColor}`,
+            background: `linear-gradient(135deg, ${style.primaryColor}40, transparent)`,
           }}
         />
       </div>
@@ -527,7 +527,7 @@ const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: La
         src={website.logo}
         alt={website.name}
         className="h-28 w-auto object-contain mb-6"
-        style={{ filter: 'drop-shadow(0 4px 15px rgba(212,175,55,0.5))' }}
+        style={{ filter: `drop-shadow(0 4px 15px ${style.primaryColor}80)` }}
       />
 
       {headerTitle && (
@@ -535,18 +535,18 @@ const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: La
           <h1
             className="text-4xl font-serif font-bold text-center tracking-widest"
             style={{
-              background: 'linear-gradient(180deg, #FFD700, #D4AF37, #B8860B)',
+              background: `linear-gradient(180deg, ${style.secondaryColor}, ${style.primaryColor}, ${style.accentColor})`,
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              textShadow: '0 2px 10px rgba(212,175,55,0.5)',
+              textShadow: `0 2px 10px ${style.primaryColor}80`,
             }}
           >
             {headerTitle}
           </h1>
           <div className="flex items-center justify-center gap-4 mt-2">
-            <div className="h-px w-20" style={{ background: 'linear-gradient(90deg, transparent, #D4AF37)' }} />
-            <div className="w-2 h-2 rotate-45" style={{ background: '#D4AF37' }} />
-            <div className="h-px w-20" style={{ background: 'linear-gradient(90deg, #D4AF37, transparent)' }} />
+            <div className="h-px w-20" style={{ background: `linear-gradient(90deg, transparent, ${style.primaryColor})` }} />
+            <div className="w-2 h-2 rotate-45" style={{ background: style.primaryColor }} />
+            <div className="h-px w-20" style={{ background: `linear-gradient(90deg, ${style.primaryColor}, transparent)` }} />
           </div>
         </div>
       )}
@@ -557,10 +557,10 @@ const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: La
             key={idx}
             className="px-8 py-4 rounded-lg text-center font-semibold text-xl"
             style={{
-              background: 'linear-gradient(135deg, rgba(30,20,10,0.9), rgba(50,40,20,0.9))',
-              border: '2px solid #D4AF37',
-              color: '#FFD700',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,215,0,0.2)',
+              background: `linear-gradient(135deg, ${style.backgroundColor}F0, ${style.accentColor}90)`,
+              border: `2px solid ${style.primaryColor}`,
+              color: style.secondaryColor,
+              boxShadow: `0 4px 20px rgba(0,0,0,0.5), inset 0 1px 0 ${style.primaryColor}40`,
             }}
           >
             {text}
@@ -570,8 +570,8 @@ const GoldenLuxuryLayout = ({ website, style, headerTitle, texts, telegram }: La
 
       {telegram && (
         <div className="mt-10 flex items-center gap-3">
-          <TelegramIcon color="#D4AF37" size={28} />
-          <span className="text-xl font-semibold" style={{ color: '#D4AF37' }}>
+          <TelegramIcon color={style.primaryColor} size={28} />
+          <span className="text-xl font-semibold" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -665,11 +665,11 @@ const MatrixLayout = ({ website, style, headerTitle, texts, telegram }: LayoutPr
 // ============ HOLOGRAPHIC LAYOUT ============
 const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: LayoutProps) => (
   <div className="absolute inset-0 flex flex-col items-center justify-center p-12">
-    {/* Rainbow gradient overlay */}
+    {/* Gradient overlay using style colors */}
     <div
-      className="absolute inset-0 opacity-30"
+      className="absolute inset-0 opacity-40"
       style={{
-        background: 'linear-gradient(135deg, #ff000020, #ff800020, #ffff0020, #00ff0020, #0080ff20, #8000ff20, #ff00ff20)',
+        background: `linear-gradient(135deg, ${style.primaryColor}30, ${style.secondaryColor}30, ${style.accentColor}30, ${style.primaryColor}30)`,
       }}
     />
 
@@ -677,12 +677,12 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
     <div
       className="absolute inset-8 rounded-2xl"
       style={{
-        background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
-        border: '2px solid rgba(255,255,255,0.3)',
+        background: `linear-gradient(135deg, ${style.primaryColor}20, ${style.secondaryColor}10)`,
+        border: `2px solid ${style.primaryColor}60`,
         backdropFilter: 'blur(2px)',
         boxShadow: `
-          0 0 30px rgba(255,255,255,0.1),
-          inset 0 0 30px rgba(255,255,255,0.05)
+          0 0 30px ${style.primaryColor}30,
+          inset 0 0 30px ${style.primaryColor}10
         `,
       }}
     />
@@ -692,7 +692,7 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
       className="absolute inset-8 rounded-2xl overflow-hidden"
       style={{
         background: `
-          linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%)
+          linear-gradient(135deg, transparent 40%, ${style.secondaryColor}20 50%, transparent 60%)
         `,
         backgroundSize: '200% 200%',
       }}
@@ -704,7 +704,7 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
         src={website.logo}
         alt={website.name}
         className="h-28 w-auto object-contain mb-8"
-        style={{ filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.5))' }}
+        style={{ filter: `drop-shadow(0 0 20px ${style.primaryColor}80)` }}
       />
 
       {headerTitle && (
@@ -714,7 +714,7 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
             background: `linear-gradient(90deg, ${style.primaryColor}, ${style.secondaryColor}, ${style.primaryColor})`,
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            textShadow: '0 0 30px rgba(255,255,255,0.3)',
+            textShadow: `0 0 30px ${style.primaryColor}50`,
           }}
         >
           {headerTitle}
@@ -727,11 +727,11 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
             key={idx}
             className="px-8 py-4 rounded-xl text-center font-bold text-xl"
             style={{
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05))',
-              border: '1px solid rgba(255,255,255,0.3)',
-              color: '#fff',
+              background: `linear-gradient(135deg, ${style.primaryColor}25, ${style.accentColor}15)`,
+              border: `1px solid ${style.primaryColor}50`,
+              color: style.secondaryColor,
               backdropFilter: 'blur(4px)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+              boxShadow: `0 8px 32px ${style.backgroundColor}80`,
             }}
           >
             {text}
@@ -741,8 +741,8 @@ const HolographicLayout = ({ website, style, headerTitle, texts, telegram }: Lay
 
       {telegram && (
         <div className="mt-10 flex items-center gap-3">
-          <TelegramIcon color="#fff" size={28} />
-          <span className="text-xl font-semibold text-white">
+          <TelegramIcon color={style.primaryColor} size={28} />
+          <span className="text-xl font-semibold" style={{ color: style.primaryColor }}>
             {telegram}
           </span>
         </div>
@@ -758,20 +758,20 @@ const GlassmorphismLayout = ({ website, style, headerTitle, texts, telegram }: L
     <div
       className="absolute inset-16 rounded-3xl"
       style={{
-        background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
+        background: `linear-gradient(135deg, ${style.primaryColor}15, ${style.accentColor}10)`,
         backdropFilter: 'blur(20px)',
-        border: '1px solid rgba(255,255,255,0.2)',
-        boxShadow: '0 25px 50px rgba(0,0,0,0.3)',
+        border: `1px solid ${style.primaryColor}40`,
+        boxShadow: `0 25px 50px ${style.backgroundColor}80`,
       }}
     />
 
     {/* Accent circles */}
     <div
-      className="absolute top-20 left-20 w-40 h-40 rounded-full opacity-30 blur-2xl"
+      className="absolute top-20 left-20 w-40 h-40 rounded-full opacity-40 blur-2xl"
       style={{ background: style.primaryColor }}
     />
     <div
-      className="absolute bottom-20 right-20 w-60 h-60 rounded-full opacity-20 blur-3xl"
+      className="absolute bottom-20 right-20 w-60 h-60 rounded-full opacity-30 blur-3xl"
       style={{ background: style.secondaryColor }}
     />
 
@@ -781,7 +781,7 @@ const GlassmorphismLayout = ({ website, style, headerTitle, texts, telegram }: L
         src={website.logo}
         alt={website.name}
         className="h-24 w-auto object-contain mb-8"
-        style={{ filter: 'drop-shadow(0 4px 15px rgba(0,0,0,0.3))' }}
+        style={{ filter: `drop-shadow(0 4px 15px ${style.primaryColor}50)` }}
       />
 
       {headerTitle && (
@@ -789,7 +789,7 @@ const GlassmorphismLayout = ({ website, style, headerTitle, texts, telegram }: L
           className="text-4xl font-bold text-center mb-10 tracking-wide"
           style={{
             color: style.primaryColor,
-            textShadow: '0 2px 10px rgba(0,0,0,0.3)',
+            textShadow: `0 2px 10px ${style.primaryColor}50`,
           }}
         >
           {headerTitle}
@@ -802,10 +802,10 @@ const GlassmorphismLayout = ({ website, style, headerTitle, texts, telegram }: L
             key={idx}
             className="px-6 py-4 rounded-2xl text-center font-semibold text-xl"
             style={{
-              background: 'rgba(255,255,255,0.1)',
+              background: `${style.primaryColor}15`,
               backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255,255,255,0.2)',
-              color: '#fff',
+              border: `1px solid ${style.primaryColor}30`,
+              color: style.secondaryColor,
             }}
           >
             {text}
@@ -817,8 +817,8 @@ const GlassmorphismLayout = ({ website, style, headerTitle, texts, telegram }: L
         <div
           className="mt-10 flex items-center gap-3 px-6 py-3 rounded-full"
           style={{
-            background: 'rgba(255,255,255,0.1)',
-            border: '1px solid rgba(255,255,255,0.2)',
+            background: `${style.primaryColor}15`,
+            border: `1px solid ${style.primaryColor}30`,
           }}
         >
           <TelegramIcon color={style.primaryColor} size={24} />

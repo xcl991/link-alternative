@@ -128,7 +128,7 @@ export default function Home() {
 
       // Helper to check if URL is external
       const isExternalUrl = (url: string): boolean => {
-        return url && (url.startsWith('http') || url.startsWith('//'));
+        return Boolean(url && (url.startsWith('http') || url.startsWith('//')));
       };
 
       // Convert ALL external images to base64 before screenshot

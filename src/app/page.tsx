@@ -42,8 +42,8 @@ export default function Home() {
   // Check browser capabilities on mount
   useEffect(() => {
     const checkCapabilities = () => {
-      const hasClipboard = !!(navigator.clipboard && navigator.clipboard.write);
-      const hasWebShare = !!(navigator.share && navigator.canShare);
+      const hasClipboard = !!(navigator.clipboard && typeof navigator.clipboard.write === 'function');
+      const hasWebShare = !!(typeof navigator.share === 'function' && typeof navigator.canShare === 'function');
       setBrowserCapabilities({
         clipboard: hasClipboard,
         webShare: hasWebShare,

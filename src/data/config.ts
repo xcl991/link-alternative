@@ -50,22 +50,39 @@ export const WEBSITES: WebsiteOption[] = [
   {
     id: "pegasusplay77",
     name: "PEGASUSPLAY77",
-    logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCEvxehWR03_HVk6E7YgxM_NkFmu23Zu6kqM0vDlDKv8KaXPgyFavq_JOOwOfL_GmtLpH6WlOOCzjoicJebV-Kh8Vg_bXgv0EVUWok7J5m_xrQRv7uZgWz-5EGJnLvR_iSbYSMKfIirdsCCld60_lGI2PEmSLQUSBQuHxtN1FggxcAHMyfnbhMv0WlT064/w597-h131/PEGASUSPLAY77.png"
+    logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCEvxehWR03_HVk6E7YgxM_NkFmu23Zu6kqM0vDlDKv8KaXPgyFavq_JOOwOfL_GmtLpH6WlOOCzjoicJebV-Kh8Vg_bXgv0EVUWok7J5m_xrQRv7uZgWz-5EGJnLvR_iSbYSMKfIirdsCCld60_lGI2PEmSLQUSBQuHxtN1FggxcAHMyfnbhMv0WlT064/w597-h131/PEGASUSPLAY77.png",
+    backgrounds: [
+      "https://ik.imagekit.io/xcl991/pg1.png",
+      "https://ik.imagekit.io/xcl991/pg2.png"
+    ]
   },
   {
     id: "playwin77",
     name: "PLAYWIN77",
-    logo: "https://playwin77earth.com/images/logoweb.png"
+    logo: "https://playwin77earth.com/images/logoweb.png",
+    backgrounds: [
+      "https://ik.imagekit.io/xcl991/pw1.png",
+      "https://ik.imagekit.io/xcl991/pw2.jpg",
+      "https://ik.imagekit.io/xcl991/pw3.png"
+    ]
   },
   {
     id: "republik77",
     name: "REPUBLIK77",
-    logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSVl_969IWAvoLhZ6XBh-eKgVZ2P3cWp6rJqchHmXa8jkOMB4m-6TYVD3U2gsixUIxftUkbQtqsTlejeg0_LQCrh-Kx7s2cKsDAczhToTlEZnGT3uHDPYLjs4rbchsSk3tCPeiMuIRPqsdvmIclflhWWJLMt3WwgZo596D1ZSDMJ-fmTQPPv1aaE8AYhE6/w600-h127/REPUBLIK77%20FIX.png"
+    logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSVl_969IWAvoLhZ6XBh-eKgVZ2P3cWp6rJqchHmXa8jkOMB4m-6TYVD3U2gsixUIxftUkbQtqsTlejeg0_LQCrh-Kx7s2cKsDAczhToTlEZnGT3uHDPYLjs4rbchsSk3tCPeiMuIRPqsdvmIclflhWWJLMt3WwgZo596D1ZSDMJ-fmTQPPv1aaE8AYhE6/w600-h127/REPUBLIK77%20FIX.png",
+    backgrounds: [
+      "https://ik.imagekit.io/xcl991/rp1.jpg",
+      "https://ik.imagekit.io/xcl991/rp2.png"
+    ]
   },
   {
     id: "taipan77",
     name: "TAIPAN77",
-    logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZv2sibamPDnYDT6G738Nuo3S7KHzTGIZLqo7VJYapihz6Cw5WpzBTmQ6JHkKdarha2USFg_bIZFaKCSbYLq80lHr98kwu9YXxIaxeb_jkQ_Cv7GovEbW9jTqfIFi8EE-y5mfHYm30IC3UC1rqw9bBM2jlxrTtAjRuAEyckPmTU05rUydUwoGa8dIPwRTm/w631-h118/TAIPAN77%20FIX.png"
+    logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZv2sibamPDnYDT6G738Nuo3S7KHzTGIZLqo7VJYapihz6Cw5WpzBTmQ6JHkKdarha2USFg_bIZFaKCSbYLq80lHr98kwu9YXxIaxeb_jkQ_Cv7GovEbW9jTqfIFi8EE-y5mfHYm30IC3UC1rqw9bBM2jlxrTtAjRuAEyckPmTU05rUydUwoGa8dIPwRTm/w631-h118/TAIPAN77%20FIX.png",
+    backgrounds: [
+      "https://ik.imagekit.io/xcl991/tp1.png",
+      "https://ik.imagekit.io/xcl991/tp2.png"
+    ]
   },
   {
     id: "qq77bet",
